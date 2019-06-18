@@ -1367,3 +1367,60 @@ textarea.form-control {
     @media (max-width: 767.98px) {
       .pb_offcanvas-header_v1 .pb_toggle-menu {
         top: 13px; } }
+
+.flip-card {
+align-items: center;
+    border-radius:4px;
+  background-color: transparent;
+  width: 322px;
+  height: 427px;
+
+  margin-bottom: 22px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+     -moz-transform-style: preserve-3d;
+     -o-transform-style: preserve-3d;
+     -ms-transform-style: preserve-3d;
+     display: inline-block;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    border-radius:4px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    border-radius:4px;
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius:4px;
+  background-color: white;
+  color: white;
+
+  transform: rotateY(180deg);
+}
